@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog</title>
+    <script type="text/javascript" src="vendors/angular.min.js"></script>
+    <script type="text/javascript" src="vendors/angular-route.min.js"></script>
+    <script type="text/javascript" src="scripts/client.js"></script>
+    <script src="scripts/services/blog.service.js"></script>
+    <script src="scripts/controllers/blog.controller.js"></script>
+    <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body ng-app="myApp">
+    <header></header>
+
+    <main>
+        <div class="container" ng-controller="BlogController as BC" ng-init="BC.getPosts()">
+            <h1>Blog</h1>
+
+            <input class="form-control" placeholder="title" ng-model="BC.post.title">
+            <textarea class="form-control" placeholder="body" ng-model="BC.post.body"></textarea>
+            <button class="btn btn-primary btn-block" ng-click="BC.createPost(BC.post)">Post</button>
+
+            <div ng-repeat="post in BC.posts.posts">
+                <h3>{{post.title}}
+                    <a ng-click="BC.deletePost(post._id)" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+                    <a ng-click="BC.editPost(post._id)" class="pull-right"><span class="glyphicon glyphicon-pencil"></span></a>
+                </h3>
+                <em>{{post.posted}}</em>
+                <p>{{post.body}}</p>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+
+</html>
