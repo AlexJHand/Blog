@@ -27,3 +27,26 @@ Clone these files to your local machine, ensure that you have a PostgreSQL datab
 
 After the dependencies are installed, use ```npm start``` to start the server, which will run on port 4000.
 
+## Screen Shot
+
+![Image of Blog](https://github.com/AlexJHand/Blog/blob/master/public/Screen%20Shot%202017-11-30%20at%209.11.59%20PM.png)
+
+### Completed Features
+
+- [x] Ability to input title and body for a post
+- [x] Display post with datestamp
+- [x] Edit and delete functionality
+
+### Next Steps
+
+- [ ] Save text formatting
+- [ ] Make posts clickable links to new views
+- [ ] Refactor into React
+
+## Authors
+
+* Alex Hand
+
+## Acknowledgements
+
+* Thanks to Jose Annuziato for his Youtube tutorial.
