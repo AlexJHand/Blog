@@ -9,7 +9,7 @@ HTML5, CSS3, AngularJS, NodeJS, Express, and MongoDB.
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
-Clone these files to your local machine, ensure that you have a PostgreSQL database correctly configured, and make sure to install the required dependencies via Node.js.
+Clone these files to your local machine, ensure that you have a Mongo database correctly configured, and make sure to install the required dependencies via Node.js.
 
 ### Prerequisites
 
