@@ -19,7 +19,7 @@ myApp.service('BlogService', function ($http) {
 
     self.editPost = function (postId) {
         console.log('In self.editPost()');
-        $http({
+        return $http({
             method: 'GET',
             url: '/blog/' + postId
         }).then(function (response) {

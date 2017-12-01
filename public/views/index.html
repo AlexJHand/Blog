@@ -26,13 +26,18 @@
             <input class="form-control" placeholder="title" ng-model="BC.post.title">
             <textarea class="form-control" placeholder="body" ng-model="BC.post.body"></textarea>
             <button class="btn btn-primary btn-block" ng-click="BC.createPost(BC.post)">Post</button>
+            <button class="btn btn-success btn-block" ng-click="BC.updatePost(BC.post)">Update</button>
 
             <div ng-repeat="post in BC.posts.posts">
                 <h3>{{post.title}}
-                    <a ng-click="BC.deletePost(post._id)" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
-                    <a ng-click="BC.editPost(post._id)" class="pull-right"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a ng-click="BC.deletePost(post._id)" class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </a>
+                    <a ng-click="BC.editPost(post._id)" class="pull-right">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
                 </h3>
-                <em>{{post.posted}}</em>
+                <em>{{post.posted | date:'mediumDate'}}</em>
                 <p>{{post.body}}</p>
             </div>
         </div>
