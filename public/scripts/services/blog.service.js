@@ -4,6 +4,19 @@ myApp.service('BlogService', function ($http) {
     self.blogPosts = {};
     self.editablePost = {};
 
+    self.changePost = function (post) {
+        console.log('In service changePost');
+        console.log('Post being changed: ', post);
+        $http({
+            method: 'PUT',
+            url: 'blog',
+            data: post
+        }).then(function (response) {
+            console.log('Blog edited', response);
+            self.getAllPosts();
+        })
+    }
+
     self.createPost = function(post) {
         console.log('In service createPost');
         console.log('Service post:', post);

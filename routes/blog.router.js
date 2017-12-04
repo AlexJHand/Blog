@@ -87,6 +87,23 @@ router.post('/', function (req, res) {
 
 }); // end post
 
+router.put('/', function (req, res) {
+    console.log('In put', req.body);
+    var postToUpdate = {
+        title: req.body.title,
+        body: req.body.body
+    }
+    console.log(postToUpdate);
+    PostModel.update({ _id: req.body._id,}, postToUpdate, function (error) {
+        if (error) {
+            console.log('Error:', error);
+            res.sendStatus(500);
+        } else {
+            res.sendStatus(200);
+        }
+    })
+})
+
 
 // Exports
 module.exports = router;

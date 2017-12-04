@@ -32,4 +32,9 @@ myApp.controller('BlogController', function (BlogService) {
         console.log('vm.posts', vm.posts);
     } // end getPosts
 
+    vm.updatePost = function (post) {
+        console.log('In updatePost()', post);
+        BlogService.changePost(post);
+    }
+
 }); // end BlogController
